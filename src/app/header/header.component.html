@@ -1,5 +1,12 @@
+<!--
+  header.component.html
+  `ngSrc` (instead of `src`) activates the NgOptimizedImage directive.
+  With NgOptimizedImage, explicit `width` + `height` are REQUIRED — they let
+  the browser reserve space and avoid layout shift. `priority` opts the image
+  OUT of lazy-loading, which is right for above-the-fold images like a logo.
+-->
 <header class="app-header">
   <img ngSrc="planning.png" alt="team task manager logo" id="app-logo" width="64" height="64" priority />
   <h1>TrackIT</h1>
-  <h3>Manage your teams efficiently</h3>
+  <p>Manage your teams efficiently</p>
 </header>
