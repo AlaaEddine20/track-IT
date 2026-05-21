@@ -1,7 +1,42 @@
+<!--
+  team.component.html — the template for one <app-team> card.
+
+  ANGULAR TEMPLATE SYNTAX SHOWN HERE:
+    {{ expression }}  interpolation — prints a value into the DOM.
+    [property]="..."  property binding — sets an element/DOM property.
+    (event)="..."     event binding — runs code when an event fires.
+
+  REMEMBER: these values come from `@Input()` properties, so they are read as
+  plain names — `teamName`, not `teamName()`. (Only signal inputs use the
+  calling syntax with parentheses.)
+-->
 <div class="team-wrapper">
   <div class="team-content">
-    <img src="{{ teamAvatar }}" alt="Team avatar" />
-    <h6>{{ teamName }}</h6>
+    <!--
+      Property binding `[src]` is preferred over `src="{{ teamAvatar }}"`:
+      it assigns the value directly (no string is built) and is type-checked.
+      NgOptimizedImage (`ngSrc`) is intentionally NOT used here: these avatars
+      are data-driven remote logos with differing aspect ratios, so they would
+      trigger NgOptimizedImage's layout-shift warnings. It shines for known,
+      fixed-size assets — like the logo in the header component.
+    -->
+    <img [src]="teamAvatar" [alt]="teamName + ' team avatar'" />
+    <div class="team-info">
+      <h6>{{ teamName }}</h6>
+      <!-- `teamMembers` is the array; `.length` is plain JavaScript. -->
+      <p>{{ teamMembers.length }} members</p>
+    </div>
   </div>
-  <button (click)="onSelectTeam()">Select</button>
+  <!--
+    Clicking emits the team's id OUT to the parent through the `selectTeam`
+    output. `aria-label` is bound with `[attr.aria-label]` so screen-reader
+    users can tell these otherwise-identical "Select" buttons apart (WCAG).
+  -->
+  <button
+    type="button"
+    (click)="selectTeam.emit(id)"
+    [attr.aria-label]="'Select team ' + teamName"
+  >
+    Select
+  </button>
 </div>

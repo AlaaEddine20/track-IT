@@ -1,17 +1,30 @@
+<!--
+  teams.component.html — renders the grid of team cards.
+
+  ANGULAR CONCEPTS HERE:
+    @for ... { }  Angular's built-in control-flow loop (replaces *ngFor).
+    track <expr>  tells Angular how to identify each item so it can reuse DOM
+                  nodes instead of rebuilding the whole list — always track a
+                  stable, unique value such as an id.
+    This component is the PARENT: it passes data DOWN via [inputs] and listens
+    for events coming UP via (outputs).
+-->
 <ul class="teams-list">
-  <li class="team-item">
-    <app-team [teamName]="teams()[0].name" [teamAvatar]="teams()[0].avatar"></app-team>
-  </li>
-  <li class="team-item">
-    <app-team [teamName]="teams()[1].name" [teamAvatar]="teams()[1].avatar"></app-team>
-  </li>
-  <li class="team-item">
-    <app-team [teamName]="teams()[2].name" [teamAvatar]="teams()[2].avatar"></app-team>
-  </li>
-  <li class="team-item">
-    <app-team [teamName]="teams()[3].name" [teamAvatar]="teams()[3].avatar"></app-team>
-  </li>
-  <li class="team-item">
-    <app-team [teamName]="teams()[4].name" [teamAvatar]="teams()[4].avatar"></app-team>
-  </li>
+  <!--
+    GOTCHA: @for does NOT use the `let` keyword (that belonged to the old
+    *ngFor microsyntax). The correct form is:
+        @for (item of items; track item.id) { ... }
+    Also note `teams()` — `teams` is a signal, so it is read by calling it.
+  -->
+  @for (team of teams(); track team.id) {
+    <li class="team-item">
+      <app-team
+        [id]="team.id"
+        [teamName]="team.name"
+        [teamAvatar]="team.avatar"
+        [teamMembers]="team.members"
+        (selectTeam)="onTeamSelected($event)"
+      />
+    </li>
+  }
 </ul>
