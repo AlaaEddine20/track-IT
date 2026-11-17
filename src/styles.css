@@ -1,4 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+
+:root {
+  --color-primary: #1f2937;
+  --color-accent: #ea580c;
+  --color-background: #f3f4f6;
+  --color-surface: #ffffff;
+  --color-border: #d1d5db;
+  --color-success: #15803d;
+  --color-error: #b91c1c;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -9,8 +19,8 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
-  background: radial-gradient(circle at top left, #181023, #0b0519);
-  color: #c3b3d8;
+  background: var(--color-background);
+  color: var(--color-primary);
   margin: 0;
   padding: 0;
   height: 100%;

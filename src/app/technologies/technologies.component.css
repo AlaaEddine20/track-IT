@@ -1,0 +1,40 @@
+main {
+  display: grid;
+  grid-template-columns: minmax(0, 0.5fr) minmax(0, 1.1fr);
+  gap: 1.5rem;
+  width: 100%;
+  min-height: 28rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background: var(--color-primary);
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  box-shadow: 0 12px 32px rgba(17, 24, 39, 0.14);
+}
+
+.tech-cards {
+  display: grid;
+  align-content: start;
+  gap: 0.9rem;
+}
+
+/* The second grid column is intentionally left open for future detail content. */
+main::after {
+  content: '';
+  min-height: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+}
+
+@media (max-width: 720px) {
+  main {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 1rem;
+  }
+
+  main::after {
+    display: none;
+  }
+}

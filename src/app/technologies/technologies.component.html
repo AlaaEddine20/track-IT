@@ -1,0 +1,11 @@
+<main>
+  <div class="tech-cards">
+    @for (technology of technologies(); track technology.id) {
+      <app-technology
+        [name]="technology.name"
+        [description]="technology.description"
+        [avatarUrl]="technology.avatarUrl"
+      />
+    }
+  </div>
+</main>

@@ -1,21 +1,20 @@
 #app {
-  width: 100%;
-  height: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  overflow: hidden;
-}
-main {
-  width: 100%;
-  height: 100%;
   display: flex;
-  background: linear-gradient(to bottom, #1b263b, #32273d);
-  padding: 2.6rem 1.6rem;
-  border-top-right-radius: 12px;
-  border-top-left-radius: 12px;
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+  height: 100%;
+  padding: 0 20px;
 }
 
-app-teams {
+app-header {
+  display: block;
   width: 100%;
+}
+
+app-technologies {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
