@@ -2,14 +2,14 @@
   display: block;
 }
 
-li {
+.tech-item {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
 /* The whole card is the button, so the click area is the full card */
-li button {
+.tech-button {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
   grid-template-areas:
@@ -35,23 +35,24 @@ li button {
     border-color 180ms ease;
 }
 
-li button:hover {
+.tech-button:hover,
+.tech-item.selected .tech-button {
   transform: translateY(-3px);
   border-left-color: var(--color-accent);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.28);
 }
 
-li button:focus-visible {
+.tech-button:focus-visible {
   outline: 3px solid var(--color-accent);
   outline-offset: 3px;
 }
 
-li button:active {
+.tech-button:active {
   transform: translateY(-1px);
 }
 
 /* Chevron: decorative, so it has an empty alternative text */
-li button::after {
+.tech-button::after {
   content: '\203A' / '';
   grid-area: arrow;
   color: var(--color-accent);
@@ -60,11 +61,11 @@ li button::after {
   transition: transform 180ms ease;
 }
 
-li button:hover::after {
+.tech-button:hover::after {
   transform: translateX(4px);
 }
 
-li img {
+.tech-avatar {
   grid-area: avatar;
   width: 3.5rem;
   height: 3.5rem;
@@ -74,14 +75,14 @@ li img {
   border-radius: 12px;
 }
 
-li h2 {
+.tech-name {
   grid-area: name;
   margin: 0;
   font-size: 1.05rem;
   font-weight: 700;
 }
 
-li p {
+.tech-description {
   grid-area: description;
   margin: 0;
   color: #4b5563;
@@ -89,14 +90,14 @@ li p {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  li button,
-  li button::after {
+  .tech-button,
+  .tech-button::after {
     transition: none;
   }
 
-  li button:hover,
-  li button:active,
-  li button:hover::after {
+  .tech-button:hover,
+  .tech-button:active,
+  .tech-button:hover::after {
     transform: none;
   }
 }

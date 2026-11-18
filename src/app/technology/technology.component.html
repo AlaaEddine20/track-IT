@@ -1,7 +1,7 @@
-<li>
-  <button (click)="onSelected()">
-    <img [src]="avatarUrl()" [alt]="name()" />
-    <h2>{{ name() }}</h2>
-    <p>{{ description() }}</p>
+<li class="tech-item" [class.selected]="isSelected()">
+  <button class="tech-button" (click)="onSelected()">
+    <img class="tech-avatar" [src]="avatarUrl()" [alt]="name()" />
+    <h2 class="tech-name">{{ name() }}</h2>
+    <p class="tech-description">{{ description() }}</p>
   </button>
 </li>

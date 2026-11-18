@@ -10,9 +10,10 @@ export class TechnologyComponent {
   readonly name = input<string>();
   readonly avatarUrl = input<string>();
   readonly description = input<string>();
-  readonly selected = output<number>();
+  readonly onSelect = output<number>();
+  readonly isSelected = input<boolean>(false);
 
   onSelected() {
-    this.selected.emit(this.id());
+    this.onSelect.emit(this.id());
   }
 }

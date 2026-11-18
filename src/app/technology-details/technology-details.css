@@ -20,7 +20,7 @@
   border-bottom: 2px solid var(--color-accent);
 }
 
-.details-header img {
+.details-avatar {
   width: 3.25rem;
   height: 3.25rem;
   padding: 0.5rem;
@@ -29,7 +29,7 @@
   border-radius: 12px;
 }
 
-.details-header h3 {
+.details-title {
   font-size: 1.4rem;
   font-weight: 700;
 }

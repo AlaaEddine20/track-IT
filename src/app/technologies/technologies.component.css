@@ -1,4 +1,4 @@
-main {
+.tech-layout {
   display: grid;
   grid-template-columns: minmax(0, 0.5fr) minmax(0, 1.1fr);
   grid-template-areas: 'tech-cards tech-details';
