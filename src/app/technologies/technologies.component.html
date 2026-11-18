@@ -1,4 +1,4 @@
-<main>
+<main class="tech-layout">
   <div class="tech-cards">
     @for (technology of technologies(); track technology.id) {
       <app-technology
@@ -6,7 +6,8 @@
         [name]="technology.name"
         [description]="technology.description"
         [avatarUrl]="technology.avatarUrl"
-        (selected)="onSelect($event)"
+        (onSelect)="onSelect($event)"
+        [isSelected]="selectedTechnology()?.id === technology.id"
       />
     }
   </div>
