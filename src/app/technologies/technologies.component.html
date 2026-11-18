@@ -2,10 +2,19 @@
   <div class="tech-cards">
     @for (technology of technologies(); track technology.id) {
       <app-technology
+        [id]="technology.id"
         [name]="technology.name"
         [description]="technology.description"
         [avatarUrl]="technology.avatarUrl"
+        (selected)="onSelect($event)"
       />
+    }
+  </div>
+  <div class="tech-details">
+    @if (selectedTechnology()) {
+      <app-technology-details [id]="selectedTechnology()!.id" [technology]="selectedTechnology()" />
+    } @else {
+      <p style="color: aliceblue">Select a technology to view details.</p>
     }
   </div>
 </main>

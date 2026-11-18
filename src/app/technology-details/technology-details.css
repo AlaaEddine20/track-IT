@@ -1,0 +1,119 @@
+:host {
+  display: block;
+}
+
+.details {
+  padding: 1.25rem;
+  color: var(--color-primary);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+}
+
+.details-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--color-accent);
+}
+
+.details-header img {
+  width: 3.25rem;
+  height: 3.25rem;
+  padding: 0.5rem;
+  object-fit: contain;
+  background: var(--color-background);
+  border-radius: 12px;
+}
+
+.details-header h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.concepts {
+  display: grid;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.concept {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  color: var(--color-primary);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid transparent;
+  border-radius: 10px;
+  transition:
+    transform 160ms ease,
+    background-color 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.concept:hover {
+  background: var(--color-surface);
+  border-left-color: var(--color-accent);
+  box-shadow: 0 6px 14px rgba(31, 41, 55, 0.14);
+  transform: translateX(3px);
+}
+
+.concept:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.concept:active {
+  transform: translateX(1px);
+}
+
+.concept-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.concept-status {
+  flex-shrink: 0;
+  padding: 0.2rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  color: #374151;
+  background: #e5e7eb;
+}
+
+.concept-status[data-status='in-progress'] {
+  color: #7c2d12;
+  background: #ffedd5;
+}
+
+.concept-status[data-status='learned'] {
+  color: #14532d;
+  background: #dcfce7;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .concept {
+    transition: none;
+  }
+
+  .concept:hover,
+  .concept:active {
+    transform: none;
+  }
+}

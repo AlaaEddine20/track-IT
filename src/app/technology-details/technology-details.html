@@ -1,0 +1,16 @@
+<div class="details">
+  <div class="details-header">
+    <img [src]="technology()?.avatarUrl" [alt]="technology()?.name" />
+    <h3>{{ technology()?.name }}</h3>
+  </div>
+  <ul class="concepts">
+    @for (concept of technology()?.concepts; track concept.id) {
+      <li>
+        <button type="button" class="concept">
+          <span class="concept-title">{{ concept.title }}</span>
+          <span class="concept-status" [attr.data-status]="concept.status">{{ concept.status }}</span>
+        </button>
+      </li>
+    }
+  </ul>
+</div>

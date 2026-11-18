@@ -1,5 +1,7 @@
 <li>
-  <img [src]="avatarUrl()" [alt]="name()" />
-  <h2>{{ name() }}</h2>
-  <p>{{ description() }}</p>
+  <button (click)="onSelected()">
+    <img [src]="avatarUrl()" [alt]="name()" />
+    <h2>{{ name() }}</h2>
+    <p>{{ description() }}</p>
+  </button>
 </li>
