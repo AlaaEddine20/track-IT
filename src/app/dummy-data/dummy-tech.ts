@@ -1,7 +1,5 @@
-import { Technology } from '../../types';
+import { Technology } from '../technology/technology.model';
 
-// Angular concepts follow the 21 modules of the official "Angular AI tutor"
-// https://angular.dev/ai/ai-tutor
 export const DUMMY_TECHNOLOGIES: Technology[] = [
   {
     id: 1,

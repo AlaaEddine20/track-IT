@@ -1,4 +1,4 @@
-import { Component, input, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { TechnologyComponent } from '../technology/technology.component';
 import { DUMMY_TECHNOLOGIES } from '../dummy-data/dummy-tech';
 import { TechnologyDetails } from '../technology-details/technology-details';
